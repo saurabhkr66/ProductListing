@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Product Listing Application- NextJS+React-Query
+
+A responsive seller dashboard where users can view, search, filter, sort, and simulate adding products using data from a public API. It also supports infinite scrolling and product detail pages.
+
+## Tech-Stack
+- [Next-js 14 (App Router)](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [React Query](https://tanstack.com/query/latest)
+- [Headless UI (Popover)](https://headlessui.com/)
+- [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) (for persistent simulated products)
+
+## Feature
+### Product Listing
+- fetches data from dummy api(`https://dummyjson.com/products`)
+- Displays all product data in a grid layout
+- support infinite query using React-query
+- Each product has a detail page with product description, reviews,etc.
+
+### Filter and sorting
+-search by title of the product
+-sort the product according to price,stock or title.
+-filter the product according to the category of the product.
+-filter are globals
+
+### Add new product
+- Form with the title, Price, Category, Quantity and imageurl.
+- product is added to the local storage.
+- product is smoothly added to the ui.
+
+### Product Details Page
+
+- View full product info, including:
+  - Description, SKU, brand, availability
+  - Warranty, dimensions, and reviews
+- Opens via /product/[id] route
 
 ## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. clone the Repop
