@@ -7,7 +7,7 @@ A responsive seller dashboard where users can view, search, filter, sort, and si
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [React Query](https://tanstack.com/query/latest)
-- [Headless UI (Popover)](https://headlessui.com/)
+- [RadixUi (Popover)](https://www.radix-ui.com/)
 - [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) (for persistent simulated products)
 
 ## Feature
@@ -35,5 +35,38 @@ A responsive seller dashboard where users can view, search, filter, sort, and si
   - Warranty, dimensions, and reviews
 - Opens via /product/[id] route
 
-## Getting Started
-1. clone the Repop
+### Getting Started
+1. clone the Repo
+```bash
+git clone https://github.com/yourusername/seller-dashboard.git
+cd Productlisting
+npm install
+npm run dev
+it will give you link to view the app(localhost:3000(if you have not open any other port));
+
+### API Source
+All data is fetched from:
+https://dummyjson.com/products
+
+### Project Structure
+src/
+├── app/
+│   ├── page.tsx               // Main dashboard
+│   └── product/[id]/page.tsx  // Product detail route
+├── components/
+│   ├── AddProductModal.tsx
+│   ├── ProductCard.tsx
+│   ├── ProductGrid.tsx
+│   ├── ProductFilters.tsx
+│   └── ProductDetailsPage.tsx
+├── hooks/
+│   └── useProduct.ts          // Data fetching + local persistence
+├── types/
+│   └── product.ts             // Product types
+
+
+### Author 
+Saurabh Kumar
+
+
+
