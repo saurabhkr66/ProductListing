@@ -36,7 +36,7 @@ A responsive seller dashboard where users can view, search, filter, sort, and si
 - Opens via /product/[id] route
 
 ### Getting Started
-1. clone the Repo
+clone the Repo
 ```bash
 git clone https://github.com/yourusername/seller-dashboard.git
 cd Productlisting
