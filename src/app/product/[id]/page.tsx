@@ -4,12 +4,14 @@ import { Product } from "@/types/product";
 
 interface ProductPageProps {
   params: {
-    id: string; // route param is always a string
+    id: string;
   };
 }
 
-export default async function ProductPage({ params }: ProductPageProps) {
-  const productId = Number(params.id); // Convert to number
+// Async function now receives a Promise, so we must await it
+export default async function ProductPage(propsPromise: Promise<ProductPageProps>) {
+  const { params } = await propsPromise; // ✅ Await the props
+  const productId = Number(params.id);   // Convert string to number
 
   const res = await axios.get(`https://dummyjson.com/products/${productId}`);
   const product: Product = res.data;
