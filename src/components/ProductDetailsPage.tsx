@@ -4,8 +4,11 @@ import Image from "next/image";
 
 // ProductDetailsPage component to display detailed information about a product
 // It receives a product object as a prop and displays its details including images, dimensions, and reviews
-
-export const ProductDetailsPage = ({ product }: { product: Product}) => {
+type ProductDetailsPageProps = {
+  thumbnail: string;
+  product: Product;
+};
+export const ProductDetailsPage = ({ product }: { product: ProductDetailsPageProps}) => {
   return (
     <div className="p-6 max-w-5xl mx-auto">
       <div className="grid md:grid-cols-2 gap-8">
