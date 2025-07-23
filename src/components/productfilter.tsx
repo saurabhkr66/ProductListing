@@ -12,7 +12,7 @@ interface Props {
   onCategoryChange: (val: string) => void;
   sortBy: string;
   onSortChange: (val: string) => void;
-  categories: Category[];
+  categories: (string | Category)[]; // Accept both types
 }
 // ProductFilters component to filter products by search term, category, and sort order
 // It receives search term, category, sort order, and a list of categories as props

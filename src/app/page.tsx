@@ -9,11 +9,7 @@ import { Product } from "@/types/product";
 import { useCategories } from "@/hooks/useCategory";
 import { ProductGrid } from "@/components/ProductGrid";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-interface Props {
-  onAdd: (productData: Product) => Promise<void>;
-  isPopover?: boolean;
-  onClose: () => void;
-}
+
 export default function DashboardPage() {
   const [page, setPage] = useState(1);
   const limit = 10;
@@ -151,7 +147,7 @@ export default function DashboardPage() {
                 setSortBy(val);
                 setPage(1);
               }}
-              categories={allCategories || []}
+              categories={allCategories ? allCategories : []}
             />
             
             <Popover open={isAddProductOpen} onOpenChange={setIsAddProductOpen}>
