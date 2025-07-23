@@ -42,7 +42,10 @@ export default function DashboardPage() {
     if (sortBy) {
       result.sort((a, b) => {
         if (sortBy === "title") return a.title.localeCompare(b.title);
-        return a[sortBy] - b[sortBy];
+        if (sortBy === "price") return (a.price ?? 0) - (b.price ?? 0);
+        if (sortBy === "stock") return (a.stock ?? 0) - (b.stock ?? 0);
+        // Add more fields as needed
+        return 0;
       });
     }
 
