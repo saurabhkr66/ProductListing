@@ -147,7 +147,7 @@ export default function DashboardPage() {
                 setSortBy(val);
                 setPage(1);
               }}
-              categories={allCategories ? allCategories : []}
+              categories={allCategories || []}
             />
             
             <Popover open={isAddProductOpen} onOpenChange={setIsAddProductOpen}>
