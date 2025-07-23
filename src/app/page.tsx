@@ -51,7 +51,7 @@ export default function DashboardPage() {
 
   const categories = Array.from(new Set(products.map((p) => p.category)));
 
-  const handleAddProduct = async (productData: any) => {
+  const handleAddProduct = async (productData: Product) => {
     await addProduct(productData);
     setIsAddProductOpen(false);
   };
