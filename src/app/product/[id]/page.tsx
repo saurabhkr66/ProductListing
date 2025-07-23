@@ -1,14 +1,10 @@
 import axios from "axios";
 import { ProductDetailsPage } from "@/components/ProductDetailsPage";
+import { Product } from "@/types/product";
 
-type ProductPageParams = {
-  params: {
-    id: string;
-  };
-};
-
-export default async function ProductPage({ params }: ProductPageParams) {
-  const res = await axios.get(`https://dummyjson.com/products/${params.id}`);
+export default async function ProductPage({ params }: { params: Product}) {
+  const { id } = params; // ✅ Destructure inside
+  const res = await axios.get(`https://dummyjson.com/products/${id}`);
   const product = res.data;
 
   return <ProductDetailsPage product={product} />;
