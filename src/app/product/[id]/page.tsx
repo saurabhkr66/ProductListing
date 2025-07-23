@@ -43,18 +43,19 @@ import { ProductDetailsPage } from "@/components/ProductDetailsPage";
 import { Product } from "@/types/product";
 
 interface PageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
-  searchParams?: {
-    [key: string]: string | string[] | undefined;
-  };
+  }>;
 }
 
 export default async function ProductPage({ params }: PageProps) {
-  const res = await fetch(`https://dummyjson.com/products/${params.id}`);
+  // Await the params since it's now a Promise
+  const { id } = await params;
+  
+  const res = await fetch(`https://dummyjson.com/products/${Number(id)}`);
   const product: Product = await res.json();
 
   return <ProductDetailsPage product={product} />;
 }
+
 
