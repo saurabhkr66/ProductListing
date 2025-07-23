@@ -4,7 +4,7 @@ import { Product } from "@/types/product";
 
 interface ProductPageProps {
   params: {
-    id: string;
+    id: number;
   };
 }
 
