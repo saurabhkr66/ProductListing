@@ -9,20 +9,21 @@ interface Props {
 export const AddProductModal: React.FC<Props> = ({ onAdd }) => {
   const [form, setForm] = useState({
     title: "",
-    price: 0,
+    price: null as number | null,
     category: "",
-    stock: 0,
+    stock: null as number | null,
     thumbnail: "",
   });
 
   const handleSubmit = () => {
     onAdd({ ...form, id: Date.now() });
-    setForm({ title: "", price: 0, category: "", stock: 0, thumbnail: "" });
+    setForm({ title: "", price:0, category: "", stock: 0, thumbnail: "" });
   };
 
   return (
+    // input form for adding a new product
     <div className="p-4 border rounded mb-4  shadow">
-      <h3 className="text-lg font-semibold mb-2">Add Product (Simulated)</h3>
+      <h3 className="text-lg font-semibold mb-2">Add Product</h3>
       <div className="grid md:grid-cols-2 gap-4">
         <input
           placeholder="Title"
@@ -45,7 +46,6 @@ export const AddProductModal: React.FC<Props> = ({ onAdd }) => {
         />
         <input
           placeholder="Stock"
-          type="number"
           value={form.stock}
           onChange={(e) => setForm({ ...form, stock: +e.target.value })}
           className="border p-2 rounded"

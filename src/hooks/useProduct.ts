@@ -1,4 +1,3 @@
-// hooks/useProduct.ts
 "use client";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
@@ -34,7 +33,7 @@ export function useProduct() {
 
   // Add new product to state + localStorage
   const addProduct = (product: Product) => {
-    const newProduct = { ...product, id: Date.now() }; // simulate unique ID
+    const newProduct = { ...product, id: Date.now() }; // simulate unique ID we can use uuid for unique id
     setCustomProducts((prev) => [...prev, newProduct]);
   };
 

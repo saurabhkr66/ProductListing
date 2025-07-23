@@ -1,4 +1,3 @@
-// src/app/product/[id]/page.tsx
 import axios from "axios";
 import { ProductDetailsPage } from "@/components/ProductDetailsPage";
 

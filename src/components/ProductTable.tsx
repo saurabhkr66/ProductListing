@@ -27,7 +27,7 @@ export const ProductTable: React.FC<ProductTableProps> = ({ products, onProductC
             onClick={() => onProductClick?.(product)}
           >
             <td className="p-2">
-              <img src={product.thumbnail} alt={product.title} className="h-12 w-12 object-cover rounded" />
+              <Image src={product.thumbnail}  width={300} height={200} alt={product.title} className="h-12 w-12 object-cover rounded" />
             </td>
             <td className="p-2">{product.title}</td>
             <td className="p-2">{product.category}</td>

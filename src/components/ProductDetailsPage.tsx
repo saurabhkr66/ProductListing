@@ -1,9 +1,9 @@
-// components/ProductDetailsPage.tsx
 "use client";
 import { Product } from "@/types/product";
 import Image from "next/image";
 
-
+// ProductDetailsPage component to display detailed information about a product
+// It receives a product object as a prop and displays its details including images, dimensions, and reviews
 
 export const ProductDetailsPage = ({ product }: { product: Product }) => {
   return (
@@ -58,7 +58,6 @@ export const ProductDetailsPage = ({ product }: { product: Product }) => {
         </div>
       </div>
 
-      {/* Reviews */}
       <div className="mt-10">
         <h2 className="text-xl font-semibold mb-2">Customer Reviews</h2>
         <div className="space-y-4">

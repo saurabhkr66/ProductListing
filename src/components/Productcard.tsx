@@ -3,6 +3,7 @@
 import React from "react";
 import { Product } from "@/types/product";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 interface Props {
   product: Product;
@@ -10,7 +11,8 @@ interface Props {
 
 export const ProductCard: React.FC<Props> = ({ product }) => {
   const router = useRouter();
-
+// Function to handle click on product card
+  // This will navigate to the product details page
   const handleClick = () => {
     router.push(`/product/${product.id}`);
   };
@@ -20,8 +22,11 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
       onClick={handleClick}
       className="cursor-pointer border rounded-lg overflow-hidden shadow hover:shadow-md transition bg-white"
     >
-      <img
-        src={product.thumbnail}
+      <Image 
+      src={product.thumbnail}
+      width={300}
+      height={200}
+        
         alt={product.title}
         className="w-full h-48 object-cover"
       />

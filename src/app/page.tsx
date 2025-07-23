@@ -115,7 +115,6 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="max-w-7xl mx-auto px-6 py-8">
         {/* Filters Section */}
         <div className="bg-white/70 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 p-6 mb-8">
@@ -128,7 +127,6 @@ export default function DashboardPage() {
             <h2 className="text-xl font-semibold text-gray-900">Filter & Search</h2>
           </div>
           
-          {/* Modified ProductFilters with Add Product Button */}
           <div className="flex flex-col lg:flex-row gap-12 items-start lg:items-end">
             <ProductFilters
               search={search}
@@ -149,7 +147,6 @@ export default function DashboardPage() {
               categories={allCategories || []}
             />
             
-            {/* Add Product Button with Popover */}
             <Popover open={isAddProductOpen} onOpenChange={setIsAddProductOpen}>
               <PopoverTrigger asChild>
                 <button className="px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 font-medium whitespace-nowrap">
@@ -223,7 +220,6 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      {/* Product Details Modal */}
       <ProductDetailsModal
         product={selectedProduct}
         onClose={() => setSelectedProduct(null)}

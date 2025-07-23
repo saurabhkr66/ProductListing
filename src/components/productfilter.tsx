@@ -10,7 +10,8 @@ interface Props {
   onSortChange: (val: string) => void;
   categories: string[];
 }
-
+// ProductFilters component to filter products by search term, category, and sort order
+// It receives search term, category, sort order, and a list of categories as props
 export const ProductFilters: React.FC<Props> = ({
   search,
   onSearchChange,
