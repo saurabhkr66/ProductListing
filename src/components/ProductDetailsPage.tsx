@@ -65,7 +65,7 @@ export const ProductDetailsPage = ({ product }: { product: Product }) => {
             <div key={i} className="border p-4 rounded shadow-sm">
               <p className="font-semibold">{r.reviewerName}</p>
               <p className="text-yellow-500">Rating: {r.rating} ⭐</p>
-              <p className="text-sm text-gray-600 italic">"{r.comment}"</p>
+              <p className="text-sm text-gray-600 italic">{r.comment}</p>
             </div>
           ))}
         </div>
