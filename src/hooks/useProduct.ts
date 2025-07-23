@@ -37,5 +37,5 @@ export function useProduct() {
     setCustomProducts((prev) => [...prev, newProduct]);
   };
 
-  return { products: allProducts, isLoading, error, addProduct };
+  return { products: allProducts,total:allProducts.length, isLoading, error, addProduct };
 }
