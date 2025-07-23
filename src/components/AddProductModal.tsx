@@ -8,7 +8,7 @@ interface Props {
   onClose: () => void;
 }
 
-export const AddProductModal: React.FC<Props> = ({ onAdd }) => {
+export const AddProductModal: React.FC<Props> = ({ onAdd, onClose }) => {
   const [form, setForm] = useState({
     title: "",
     price: null as number | null,
@@ -17,9 +17,51 @@ export const AddProductModal: React.FC<Props> = ({ onAdd }) => {
     thumbnail: "",
   });
 
-  const handleSubmit = () => {
-    onAdd({ ...form, id: Date.now() });
-    setForm({ title: "", price:0, category: "", stock: 0, thumbnail: "" });
+const handleSubmit = () => {
+    // Ensure all required fields are filled
+    if (!form.title || !form.category || form.price === null || form.price <= 0) {
+      alert("Please fill in all required fields");
+      return;
+    }
+
+    const newProduct: Product = {
+      // or use a proper ID generation method
+      title: form.title,
+      price: form.price ?? 0,
+      category: form.category,
+      stock: form.stock ?? 0,
+      thumbnail: form.thumbnail,
+      id: 0,
+      description: "",
+      discountPercentage: 0,
+      rating: 0,
+      tags: [],
+      brand: "",
+      sku: "",
+      weight: 0,
+      dimensions: {
+        depth: 0,
+        width: 0,
+        height: 0
+      },
+      warrantyInformation: "",
+      shippingInformation: "",
+      availabilityStatus: "",
+      reviews: [],
+      returnPolicy: "",
+      minimumOrderQuantity: 0,
+      meta: {
+        createdAt: "",
+        updatedAt: "",
+        barcode: "",
+        qrCode: ""
+      },
+      images: []
+    };
+
+    onAdd(newProduct);
+    setForm({ title: "", price: 0, category: "", stock: 0, thumbnail: "" });
+    onClose(); // Close the modal after adding
   };
 
   return (
@@ -36,8 +78,8 @@ export const AddProductModal: React.FC<Props> = ({ onAdd }) => {
         <input
           placeholder="Price"
           type="number"
-          value={form.price}
-          onChange={(e) => setForm({ ...form, price: +e.target.value })}
+          value={form.price !== null ? form.price : ""}
+          onChange={(e) => setForm({ ...form, price: e.target.value === "" ? null : +e.target.value })}
           className="border p-2 rounded"
         />
         <input
@@ -48,8 +90,8 @@ export const AddProductModal: React.FC<Props> = ({ onAdd }) => {
         />
         <input
           placeholder="Stock"
-          value={form.stock}
-          onChange={(e) => setForm({ ...form, stock: +e.target.value })}
+          value={form.stock !== null ? form.stock : ""}
+          onChange={(e) => setForm({ ...form, stock: e.target.value === "" ? null : +e.target.value })}
           className="border p-2 rounded"
         />
         <input
