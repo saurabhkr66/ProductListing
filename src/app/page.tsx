@@ -9,6 +9,7 @@ import { Product } from "@/types/product";
 import { useCategories } from "@/hooks/useCategory";
 import { ProductGrid } from "@/components/ProductGrid";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Category } from "@/types/category";
 
 export default function DashboardPage() {
   const [page, setPage] = useState(1);
