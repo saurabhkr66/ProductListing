@@ -37,7 +37,8 @@
 // }
 // src/app/product/[id]/page.tsx
 
-import axios from "axios";
+// src/app/product/[id]/page.tsx
+
 import { ProductDetailsPage } from "@/components/ProductDetailsPage";
 import { Product } from "@/types/product";
 
@@ -51,8 +52,9 @@ interface PageProps {
 }
 
 export default async function ProductPage({ params }: PageProps) {
-  const res = await axios.get(`https://dummyjson.com/products/${params.id}`);
-  const product: Product = res.data;
+  const res = await fetch(`https://dummyjson.com/products/${params.id}`);
+  const product: Product = await res.json();
 
   return <ProductDetailsPage product={product} />;
 }
+
