@@ -4,6 +4,8 @@ import { Product } from "@/types/product";
 
 interface Props {
   onAdd: (product: Product) => void;
+  isPopover?: boolean;
+  onClose: () => void;
 }
 
 export const AddProductModal: React.FC<Props> = ({ onAdd }) => {

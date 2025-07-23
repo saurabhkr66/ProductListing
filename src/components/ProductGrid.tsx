@@ -4,6 +4,7 @@ import { ProductCard } from "./Productcard";
 
 interface Props {
   products: Product[];
+  onProductClick?: (product: Product) => void;
 }
 
 export const ProductGrid: React.FC<Props> = ({ products }) => {
